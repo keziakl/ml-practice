@@ -18,7 +18,9 @@ The projection of _x_, i.e. _Px_, is a function that returns the point on the ve
 
 If we call this point returned x̅, then we can define the Euclidean distance from x to x̅. Here is a visual:
 
-[<img alt="orthogonal projection" width="100px" src="images/linear-regression/orthogonal-projection.png" />](https://www.google.com/)
+<a href="https://www.google.com/">
+  <img alt="orthogonal projection" src="../images/linear-regression/orthogonal-projection.png" width="500">
+</a>
 
 
 Note: In this visual, the green line denotes the orthogonal projection (also the closest point on vector _v_ to x). The red dashed lines are non-orthogonal projections (further away in the Euclidean space than x̅).
@@ -58,6 +60,11 @@ Usually, we would use each variable (Y, X) as dimensions, and each data point wo
 
 However, another way to visualize this is to treat each observation (row in the table, obs<sub>1</sub>, obs<sub>2</sub>, obs<sub>3</sub>) as dimension and each variable _y = (2, 3, 2)_ as a vector. This allows us to define the column space of X and c (_col(X, c)_), which is a linear combination of vectors X and c. Because X and c are linearly independent and there is only 2 of them (in a 3D space), the resulting _span_ is a 2D plane in the 3D space (the 3 observations we have).
 
-[<img alt="orthogonal projection" width="100px" src="images/linear-regression/3d-plane.png" />](https://www.google.com/)
+<a href="https://www.google.com/">
+  <img alt="3d plane" src="../images/linear-regression/3d-plane.png" width="500">
+</a>
 
 Vector _y_ lies of the plane, but we want to approximate it using the _span_ (think: in terms of) X and c. Therefore, we find the orthogonal projection (the "best" vector that lies on the plane). We know that the plane is composed of linear combinations of _B<sub>1</sub>X + B<sub>0</sub>c_. The scalar coefficents (the Bs) are the regression coefficients derived by Ordinary Least Squares! Therefore, geometrically, orthogonal projection is equivalent to linear regression.
+
+# The code to run
+The code in exploration.py uses numpy to mathematically verify the relationship of linear regression and orthogonal projection with an example. You can see a 3D plot that can help you understand the relationship.
